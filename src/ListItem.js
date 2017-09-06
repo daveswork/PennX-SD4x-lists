@@ -4,24 +4,24 @@ class ListItem extends Component {
 
     constructor(props) {
 	super(props);
-	this.state = { //color: 'black',
-                   amDone: false 
-        };
+	this.state = { color: 'black'};
     }
 
     handleClick() {
 	// Implement this function!
-	this.setState({amDone: !this.state.amDone});
+	if(this.state.color==='black'){
+        this.setState({color:'grey'});
+    }else{
+        this.setState({color:'black'});
+    }
     }
 
   render() {
     var item = this.props.item;
     var name = item.name;
-    var iColor = this.state.amDone?'grey':'black';
-    //console.log(cToggle);
 
     return (
-	    <span onClick={this.handleClick.bind(this)} style={{color: iColor}}>
+	    <span onClick={this.handleClick.bind(this)} style={{color: this.state.color}}>
         <strong>{name}</strong>
       </span>
     );
