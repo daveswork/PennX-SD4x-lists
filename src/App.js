@@ -21,6 +21,12 @@ class App extends Component {
    */
   handleAddList(s) {
       // Implement this function!
+      var list = this.state.lists;
+      list.push(s);
+      this.setState({lists: list});
+      var item = this.state.items;
+      item[s] = [];
+      this.setState({items: item});
   }
 
   /**
