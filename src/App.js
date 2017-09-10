@@ -39,6 +39,12 @@ class App extends Component {
    */
   handleAddItem(s) {
       // Implement this function!
+      var subList = this.state.items;
+      var subArray = subList[s.list];
+      var newItem = {name:s.name};
+      subArray.push(newItem);
+      subList[s.list] = subArray;
+      this.setState({items: subList});
   }
 
   /**
