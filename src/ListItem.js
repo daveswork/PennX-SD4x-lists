@@ -10,7 +10,7 @@ class ListItem extends Component {
     handleClick() {
 	// Implement this function!
 	if(this.state.color==='black'){
-        this.setState({color:'grey'});
+        this.setState({color:'gray'});
     }else{
         this.setState({color:'black'});
     }
